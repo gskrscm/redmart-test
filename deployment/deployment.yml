@@ -1,0 +1,6 @@
+---
+- name : Deploying application 
+  hosts: webserver
+  sudo : True
+  roles: 
+    - git

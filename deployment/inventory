@@ -1,0 +1,11 @@
+[all:vars]
+ansible_user=xxxxx
+
+[jenkins]
+x.x.x.x
+
+[webserver]
+x.x.x.x
+
+[database]
+x.x.x.x
