@@ -9,10 +9,10 @@
 
   - name: Download war file
     get_url:
-      url: http://localhost:8081/repository/todoapp-release/com/somecompany/TodoDemo/11/TodoDemo-11.war
+      url: http://localhost:8081/repository/todoapp-release/com/somecompany/TodoDemo/{{ version }}/TodoDemo-{{ version }}.war
       dest: /opt/app/TodoDemo.war
-      url_username: admin
-      url_password: admin123
+      url_username: "{{ username }}"
+      url_password: "{{ password }}"
 
   - name: Kill TodoApp process if running
     shell: "ps -aef | grep TodoDemo | grep -v grep | awk '{print $2}' | xargs kill -9"
