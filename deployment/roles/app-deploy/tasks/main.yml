@@ -16,6 +16,7 @@
 
   - name: Kill TodoApp process if running
     shell: "ps -aef | grep TodoDemo | grep -v grep | awk '{print $2}' | xargs kill -9"
+    shell: "sleep 60"
 
   - name: Start application
     shell : "nohup java -Dspring.profiles.active=test -Dserver.port=5000 -jar /opt/app/TodoDemo.war >> /opt/app/app.log &"
