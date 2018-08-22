@@ -1,0 +1,25 @@
+---
+
+  - name: Ensure app_home exists
+    file:
+      path: /opt/app
+      state: directory
+      owner: redmart
+      group: redmart
+      mode: u+rwx
+      follow: true
+
+  - name: Download war file
+    get_url:
+      url: http://localhost:8081/repository/todoapp-release/com/somecompany/TodoDemo/11/TodoDemo-11.war
+      dest: /opt/app/TodoDemo.war
+      owner: redmart
+      group: redmart
+      url_username: admin
+      url_password: admin123
+
+
+  - name: Start application
+    become: yes
+    become_user: redmart
+    shell : "nohup java -Dserver.port=5000 -jar /opt/app/TodoDemo.war >> /tmp/app.log &"

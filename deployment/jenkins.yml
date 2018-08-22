@@ -1,16 +1,13 @@
 ---
-- name : Configuring Jenkins CI server
+- name : Configuring Jenkins CI server and nexus3-oss 
   hosts: jenkins
   sudo : True
   roles: 
     - git
-    # - geerlingguy.jenkins
-    # Failed with one error but working
+    - geerlingguy.jenkins
     - savoirfairelinux.nexus3-oss
 
-
-# need to create user and database manually. 
-# - hosts: database
-#   roles:
-#     - role: geerlingguy.mysql
-#       become: yes
+- hosts: database
+  roles:
+    - role: geerlingguy.mysql
+      become: yes
