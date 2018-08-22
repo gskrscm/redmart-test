@@ -19,4 +19,4 @@
     shell: "sleep 60"
 
   - name: Start application
-    shell : "nohup java -Dspring.profiles.active=test -Dserver.port=5000 -jar /opt/app/TodoDemo.war >> /opt/app/app.log &"
+    shell : "sh start.sh"
