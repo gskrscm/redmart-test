@@ -16,7 +16,7 @@
 
   - name: Kill TodoApp process if running
     shell: "ps -aef | grep TodoDemo | grep -v grep | awk '{print $2}' | xargs kill -9"
-    shell: "sleep 60"
+    shell: "sleep 20"
 
   - name: Start application
     shell : "sh start.sh"
